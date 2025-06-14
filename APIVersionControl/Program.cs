@@ -51,10 +51,14 @@ var apiVersionDescriptionProvider = app.Services.GetRequiredService<IApiVersionD
     {
         foreach (var description in apiVersionDescriptionProvider.ApiVersionDescriptions)
         {
+            //$"/swagger/{description.GroupName}/swagger.json",
+            //options.SwaggerEndpoint(
+            //    description.GroupName.ToUpperInvariant()
+            //);   
             options.SwaggerEndpoint(
-                $"/swagger/{description.GroupName}/swagger.json",
-                description.GroupName.ToUpperInvariant()
-            );   
+               $"/swagger/{description.GroupName}/swagger.json",
+               description.GroupName.ToUpperInvariant()
+           );
         }
     });
 //}
