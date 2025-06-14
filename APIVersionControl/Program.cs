@@ -65,4 +65,8 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+//  Esto permite que funcione en Railway
+var port = Environment.GetEnvironmentVariable("PORT") ?? "5000";
+app.Urls.Add($"http://*:{port}");
+
 app.Run();
