@@ -43,8 +43,8 @@ var app = builder.Build();
 var apiVersionDescriptionProvider = app.Services.GetRequiredService<IApiVersionDescriptionProvider>();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
+//if (app.Environment.IsDevelopment())
+//{
     app.UseSwagger();
     // 6. Configure Swagger DOCS
     app.UseSwaggerUI(options =>
@@ -57,7 +57,7 @@ if (app.Environment.IsDevelopment())
             );   
         }
     });
-}
+//}
 
 app.UseHttpsRedirection();
 
